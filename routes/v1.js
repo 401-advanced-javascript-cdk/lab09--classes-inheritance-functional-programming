@@ -10,9 +10,9 @@ router.param('model', modelFinder);
 router.get('/api/v1/:model', handleGetAll);
 router.post('/api/v1/:model', handlePost);
 
-router.get('/api/v1/:model/:id', handleGetOne);
-router.delete('/api/v1/:model/:id', handleDelete);
-router.put('/api/v1/:model/:id', handlePut);
+router.get('/api/v1/:model/:_id', handleGetOne);
+router.delete('/api/v1/:model/:_id', handleDelete);
+router.put('/api/v1/:model/:_id', handlePut);
 
 // Route Handlers
 function handleGetAll(req, res, next) {
@@ -25,8 +25,8 @@ function handleGetAll(req, res, next) {
 }
 
 function handleGetOne(req, res, next) {
-  let id = req.params.id;
-  req.model.get(id)
+  let _id = req.params._id;
+  req.model.get(_id)
     .then(results => res.json(results[0]))
     .catch(next);
 }
@@ -38,15 +38,15 @@ function handlePost(req, res, next) {
 }
 
 function handlePut(req, res, next) {
-  let id = req.params.id;
-  req.model.put(id, req.body)
+  let _id = req.params._id;
+  req.model.put(_id, req.body)
     .then(results => res.json(results))
     .catch(next);
 }
 
 function handleDelete(req, res, next) {
-  let id = req.params.id;
-  req.model.delete(id)
+  let _id = req.params._id;
+  req.model.delete(_id)
   .then(results => res.json(results))
   .catch(next)
 }

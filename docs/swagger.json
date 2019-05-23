@@ -1,0 +1,345 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Lab09",
+    "description" : "Lab09",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "url" : "https://lab09-401d30.herokuapp.com"
+  } ],
+  "paths" : {
+    "/api/v1/players/:_id" : {
+      "put" : {
+        "description" : "Posts a new player",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "_id",
+          "schema" : {
+            "type" : "integer"
+          },
+          "required" : true,
+          "description" : "ID of the player to update"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "example" : {
+                "name" : "name",
+                "team" : "team"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "team" : "team",
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://lab09-401d30.herokuapp.com"
+      } ],
+      "delete" : {
+        "description" : "Deletes the player with the given _id",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "_id",
+          "schema" : {
+            "type" : "integer"
+          },
+          "required" : true,
+          "description" : "ID of the player to delete"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "team" : "team",
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      }
+    },
+    "/api/v1/teams/:_id" : {
+      "put" : {
+        "description" : "Updates the team that has the given _id",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "_id",
+          "schema" : {
+            "type" : "integer"
+          },
+          "required" : true,
+          "description" : "ID of the team to update"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "bats" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "example" : {
+                "name" : "name"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "players" : [ ],
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      },
+      "delete" : {
+        "description" : "Deletes the team with the given _id",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "_id",
+          "schema" : {
+            "type" : "integer"
+          },
+          "required" : true,
+          "description" : "ID of the team to delete"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "team" : "team",
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://lab09-401d30.herokuapp.com"
+      } ]
+    },
+    "/api/v1/teams" : {
+      "get" : {
+        "description" : "Gets all teams",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "type" : "array",
+                  "name" : "name",
+                  "players" : [ ],
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://lab09-401d30.herokuapp.com"
+      } ],
+      "post" : {
+        "description" : "Posts a new team",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "example" : {
+                "name" : "name"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "players" : [ ],
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      }
+    },
+    "/api/v1/players" : {
+      "get" : {
+        "description" : "Gets all players",
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "type" : "array",
+                  "name" : "name",
+                  "bats" : "L",
+                  "throws" : "L",
+                  "position" : "C",
+                  "team" : "team"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://lab09-401d30.herokuapp.com"
+      } ],
+      "post" : {
+        "description" : "Posts a new player",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "bats" : {
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "position" : {
+                    "type" : "string"
+                  },
+                  "team" : {
+                    "type" : "string"
+                  },
+                  "throws" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "example" : {
+                "name" : "name",
+                "bats" : "L",
+                "throws" : "L",
+                "position" : "C",
+                "team" : "team"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : {
+                  "name" : "name",
+                  "bats" : "L",
+                  "throws" : "L",
+                  "position" : "C",
+                  "team" : "team",
+                  "_id" : "_id"
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://lab09-401d30.herokuapp.com"
+        } ]
+      }
+    }
+  }
+}
