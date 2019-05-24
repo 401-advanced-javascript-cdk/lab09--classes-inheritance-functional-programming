@@ -3,6 +3,10 @@
 const teams = require('./teams-schema.js');
 const mongoose = require('mongoose');
 
+/**
+ * @function mongood.Schema
+ * Generates the schema for the model
+ */
 const players = mongoose.Schema({
   name: { type:String, required:true },
   position: { type:String, required:true, uppercase:true, enum:['P','C','1B','2B','SS','3B','RF','LF','CF']},
