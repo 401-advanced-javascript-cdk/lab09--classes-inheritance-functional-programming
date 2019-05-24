@@ -3,8 +3,8 @@ Implements MongoDB
 ### Author: Chris Kozlowski
 
 ### Links and Resources
-* [Submission PR](https://github.com/401-advanced-javascript-cdk/lab08-mongo/pull/1)
-* [Travis](https://travis-ci.com/401-advanced-javascript-cdk/lab08-mongo)
+* [Submission PR](https://github.com/401-advanced-javascript-cdk/lab09--classes-inheritance-functional-programming/pull/1)
+<!-- * [Travis](---) -->
 * [Heroku Deployment](https://lab09-401d30.herokuapp.com/api/v1/)
 * [Swagger Docs](https://lab09-401d30.herokuapp.com/api-docs/)
 * [JSDocs](https://lab09-401d30.herokuapp.com/jsdocs/)
